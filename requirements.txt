@@ -1,0 +1,22 @@
+## REQUIREMENTS:
+============================
+python, for best support use : (v3.9-v3.12) , other versions might work, 
+        but you may have some issues(the app run on v3.13.11 , but had to
+        deal with some issues) 
+
+---------- TRAINING:      
+torch
+torchvision
+torchaudio
+ultralytics
+pyyaml
+opencv-python-headless
+
+
+---------- WEBAPP :
+WEBAPP :
+flask
+ultralytics
+onnxruntime
+pillow
+opencv-python-headless

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fire & Smoke Detector</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <!-- Left: Results Panel -->
+        <div class="left-panel">
+            <h1>Fire & Smoke Detector</h1>
+            <div id="resultDisplay">
+                <p class="placeholder">Upload an image or use the camera to start detection.</p>
+                <img id="resultImage" src="" alt="Detection Result">
+                <p id="detectionText"></p>
+            </div>
+        </div>
+
+        <!-- Right: Controls Panel -->
+        <div class="right-panel">
+            <h2>Controls</h2>
+
+            <!-- Upload -->
+            <div class="control">
+                <label class="custom-file-upload">
+                    <input type="file" id="fileInput" accept="image/*">
+                    Choose Image
+                </label>
+                <span id="fileName"></span>
+                <button id="uploadBtn" disabled>Detect</button>
+            </div>
+
+            <!-- Snapshot -->
+            <div class="control">
+                <button id="startCamera">Start Camera</button>
+                <button id="takeSnapshot" disabled>Take Snapshot</button>
+            </div>
+
+            <!-- Live -->
+            <div class="control">
+                <button id="toggleLive">Start Live Detection</button>
+                <span id="liveStatus"></span>
+            </div>
+
+            <!-- Hidden video & canvas -->
+            <video id="video" autoplay playsinline></video>
+            <canvas id="canvas" style="display:none;"></canvas>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

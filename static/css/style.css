@@ -1,0 +1,130 @@
+* { box-sizing: border-box; }
+body {
+    background-color: #000000;
+    color: #ff9900;
+    font-family: 'Courier New', monospace;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+    border: 3px solid #ff9900;
+    margin: 10px;
+}
+
+.left-panel {
+    flex: 2;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #0a0a0a;
+    overflow: hidden; /* Prevent overflow */
+}
+
+.left-panel h1 {
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+#resultDisplay {
+    width: 100%;
+    text-align: center;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#resultImage {
+    max-width: 100%;
+    max-height: 70vh;
+    width: auto;
+    height: auto;
+    object-fit: contain; /* Scale to fit without distortion or overflow */
+    border: 2px solid #ff9900;
+    margin: 20px 0;
+    display: none;
+}
+
+#detectionText {
+    font-size: 1.3em;
+    margin-top: 10px;
+    min-height: 1.5em;
+}
+
+.placeholder {
+    color: #ff990066;
+    font-size: 1.2em;
+    margin-top: 100px;
+}
+
+.right-panel {
+    flex: 1;
+    background-color: #111111;
+    padding: 30px;
+    border-left: 2px solid #ff9900;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 40px;
+}
+
+.right-panel h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.control {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+button, .custom-file-upload {
+    background-color: #000000;
+    color: #ff9900;
+    border: 2px solid #ff9900;
+    padding: 12px 20px;
+    font-family: 'Courier New', monospace;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover, .custom-file-upload:hover {
+    background-color: #ff990033;
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.custom-file-upload input[type="file"] {
+    display: none;
+}
+
+#fileName {
+    color: #ff9900;
+    font-size: 0.9em;
+    min-height: 1.2em;
+}
+
+#liveStatus {
+    color: #ff5500;
+    font-weight: bold;
+}
+
+video {
+    width: 1px; height: 1px; opacity: 0; position: absolute;
+}
+
+@media (max-width: 900px) {
+    .container { flex-direction: column; margin: 5px; }
+    .right-panel { border-left: none; border-top: 2px solid #ff9900; }
+}
